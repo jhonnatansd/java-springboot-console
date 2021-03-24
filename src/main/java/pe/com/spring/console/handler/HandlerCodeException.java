@@ -16,7 +16,7 @@ public class HandlerCodeException implements ExitCodeExceptionMapper {
 	public int getExitCode(Throwable ex) {
 		log.error("============================================================");
         log.error("Se ha producido un error en el proceso de carga");
-        log.error("Descripción del error: {}", ex.getMessage());
+        log.error("Descripción del error: {}", ex.getCause().getMessage());
         log.error("============================================================");
         
 		if (ex.getCause() instanceof ProcessException) {
